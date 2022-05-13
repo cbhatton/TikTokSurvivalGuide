@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ TOPIC }}{% endblock %}
+
+{% block content %}
+
+<div>
+    {% for line in topic %}
+        {% if line[0] == '!' %}
+            <video src={{ '/static/tik_toks/' + line[1:] }} width="360" controls=""> No video support in this browser.</video>
+        {% else %}
+            <blockquote class="blockquote text-center">
+                <p class="mb-0">
+                    {{ line }}
+                </p>
+            </blockquote>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}
