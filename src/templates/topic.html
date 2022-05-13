@@ -8,6 +8,10 @@
     {% for line in topic %}
         {% if line[0] == '!' %}
             <video src={{ '/static/tik_toks/' + line[1:] }} width="360" controls=""> No video support in this browser.</video>
+        {% elif line[0] == '@' %}
+            <a href={{ line[1:] }}>{{ line[1:] }}</a>
+        {% elif line[0] == '#' %}
+            <img src={{ '/static/images/' + line[1:] }}>
         {% else %}
             <blockquote class="blockquote text-center">
                 <p class="mb-0">
